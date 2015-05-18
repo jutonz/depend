@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Depend
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+  %body
+    .content
+      = render 'layouts/navbar' unless @disable_nav
+      - if flash[:notice]
+        .notice= flash[:notice]
+      = yield

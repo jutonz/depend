@@ -1,0 +1,4 @@
+.task-list
+  - @top_level_tasks.each do |task|
+    = render task
+= button_to 'New Task', new_task_path, method: :get, class: 'new-task-button'
